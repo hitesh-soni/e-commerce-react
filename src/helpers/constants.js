@@ -1,0 +1,3 @@
+export const CONSTANTS = {
+  PERSIST_KEY: "XENDIT_E_COMMERCE",
+};
