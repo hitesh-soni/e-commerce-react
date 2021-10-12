@@ -2,6 +2,7 @@
   "name": "xendit-e-commerce",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://hitesh-soni.github.io/e-commerce-react",
   "dependencies": {
     "@craco/craco": "^6.2.0",
     "@material-ui/icons": "^4.11.2",
@@ -29,9 +30,11 @@
     "start:dev": "env-cmd -f .env.development craco start",
     "start:stage": "env-cmd -f .env.staging craco start",
     "start:prod": "env-cmd -f .env.production craco start",
-    "build": "craco build",
+    "build": "env-cmd -f .env.production craco build",
     "test": "craco test",
-    "eject": "craco eject"
+    "eject": "craco eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +48,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
+    "gh-pages": "^3.2.3",
     "husky": "^5.2.0",
     "lint-staged": "^10.5.4",
     "prettier": "^2.3.2"
