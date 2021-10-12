@@ -14,6 +14,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-feather": "^2.0.9",
+    "react-helmet": "^6.1.0",
+    "react-infinite-scroll-component": "^6.1.0",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
@@ -23,7 +25,7 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "PORT=3001 craco start",
     "start:dev": "env-cmd -f .env.development craco start",
     "start:stage": "env-cmd -f .env.staging craco start",
     "start:prod": "env-cmd -f .env.production craco start",

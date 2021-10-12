@@ -30,9 +30,9 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  
 }
-html, body {
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -103,9 +103,6 @@ h6 {
   background-color: #fff;
 }
 
-
-
-
 .main-layout-wrapper {
   padding-left: 280px;
   &.broken {
@@ -123,4 +120,17 @@ h6 {
   Header {
     width: calc(100% - 280px);
   }
+}
+
+.single-line-trim {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.seprator {
+  background-color: #ddd;
+  margin: 5px;
+  height: 1px;
+  width: 100%;
 }

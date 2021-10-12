@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { renderRoutes } from "config/routes";
-import { NotFound } from "components/Global";
+import { NotFound, Container } from "components/Global";
 
 function Routing() {
   return (
@@ -12,7 +12,9 @@ function Routing() {
             key={key}
             path={route.path}
             exact={true}
-            render={() => <route.component />}
+            render={() => (
+              <Container pageTitle={route.pageTitle} route={route} />
+            )}
           />
         ))}
         <Route component={NotFound} />

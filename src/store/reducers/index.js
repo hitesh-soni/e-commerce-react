@@ -1,31 +1,14 @@
-import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import { CONSTANTS } from "helpers/constants";
-import { auth } from "store/types";
+import { combineReducers } from "redux";
+import category from "./category";
+import cart from "./cart";
+import products from "./products";
+import order from "./order";
+import auth from "./auth";
 
-const initialAuthState = {
-  user: undefined,
-  authToken: {
-    refreshToken: undefined,
-    accessToken: undefined,
-  },
-};
-
-const reducer = persistReducer(
-  { storage, key: CONSTANTS.PERSIST_KEY, whitelist: ["user", "authToken"] },
-  (state = initialAuthState, action = []) => {
-    switch (action.type) {
-      case auth.LOGIN: {
-        const { authToken, user } = action.payload;
-        return { ...state, authToken, user };
-      }
-      case auth.LOGOUT:
-        return initialAuthState;
-      default: {
-        return state;
-      }
-    }
-  }
-);
-
-export default reducer;
+export default combineReducers({
+  category,
+  products,
+  auth,
+  order,
+  cart,
+});
